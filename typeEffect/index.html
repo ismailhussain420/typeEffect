@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Effect</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    h1{
+        margin-top:12rem;
+        text-align: center;
+        color:white
+    }
+    h1::after{
+        border-right: 2px solid white;
+        content: '';
+        position: relative;
+        left: 10px;
+        animation: blink 0.6s infinite;
+    }
+    @keyframes blink{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity:1
+        }
+    }
+</style>
+<body>
+    
+
+    <h1></h1>
+<script>
+    var h1 = document.querySelector("h1");
+    var text ="Learn with Ismail";
+    var index=0;
+        
+    function typeEffect(){
+        h1.innerHTML = text.slice(0,index++);
+        if(index >= text.length){
+            index=0
+        }
+
+
+    }
+    setInterval(typeEffect,200)
+    
+</script>
+</body>
+</html>
